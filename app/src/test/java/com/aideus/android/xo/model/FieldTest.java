@@ -1,6 +1,5 @@
 package com.aideus.android.xo.model;
 
-import com.aideus.android.xo.model.exceptions.AlreadyOccupiedException;
 import com.aideus.android.xo.model.exceptions.InvalidPointException;
 
 import org.junit.Test;
@@ -15,7 +14,7 @@ public class FieldTest {
     @Test
     public void testGetSize() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         assertEquals(3, field.getSize());
 
@@ -24,7 +23,7 @@ public class FieldTest {
     @Test
     public void testSetFigure() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(0, 0);
 
@@ -41,7 +40,7 @@ public class FieldTest {
     @Test
     public void testGetFigureWhenFigureIsNotSet() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(0, 0);
 
@@ -54,7 +53,7 @@ public class FieldTest {
     @Test
     public void testGetFigureWhenXIsLessThanZero() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(-1, 0);
 
@@ -68,7 +67,7 @@ public class FieldTest {
     @Test
     public void testGetFigureWhenYIsLessThanZero() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(0, -1);
 
@@ -82,7 +81,7 @@ public class FieldTest {
     @Test
     public void testGetFigureWhenXIsMoreThanSize() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(field.getSize() + 1, 0);
 
@@ -96,7 +95,7 @@ public class FieldTest {
     @Test
     public void testGetFigureWhenYIsMoreThanSize() throws Exception {
 
-        final Field field = new Field();
+        final Field field = new Field(3);
 
         final Point inputPoint = new Point(0, field.getSize() + 1);
 
