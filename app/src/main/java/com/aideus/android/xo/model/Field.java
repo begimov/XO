@@ -2,9 +2,6 @@ package com.aideus.android.xo.model;
 
 import com.aideus.android.xo.model.exceptions.InvalidPointException;
 
-/**
- * Created by Galymzhan Begimov on 26.08.2016.
- */
 public class Field {
 
     private static final int MIN_COORDINATE = 0;
