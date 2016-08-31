@@ -20,7 +20,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -39,7 +39,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -62,7 +62,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -81,7 +81,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -104,7 +104,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -122,7 +122,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -144,7 +144,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
@@ -162,7 +162,7 @@ public class WinnerControllerTest {
         final WinnerController winnerController = new WinnerController();
 
         final Random random = new Random();
-        final int fieldSize = random.nextInt(100);
+        final int fieldSize = random.nextInt(100) + 3;
 
         System.out.print(Integer.toString(fieldSize));
 
