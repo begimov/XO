@@ -6,10 +6,6 @@ import com.aideus.android.xo.model.Point;
 import com.aideus.android.xo.model.exceptions.AlreadyOccupiedException;
 import com.aideus.android.xo.model.exceptions.InvalidPointException;
 
-/**
- * Created by Galymzhan Begimov on 26.08.2016.
- */
-
 public class MoveController {
 
     public void applyFigure(final Field field,
