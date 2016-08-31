@@ -5,10 +5,6 @@ import com.aideus.android.xo.model.Figure;
 import com.aideus.android.xo.model.Point;
 import com.aideus.android.xo.model.exceptions.InvalidPointException;
 
-/**
- * Created by Galymzhan Begimov on 26.08.2016.
- */
-
 public class WinnerController {
 
     public Figure getWinner(final Field field) {
@@ -42,13 +38,13 @@ public class WinnerController {
             })) {
                 return field.getFigure(new Point(0, 0));
             }
-            if (check(field, new Point(0, 2), new IPointGenerator() {
+            if (check(field, new Point(0, field.getSize() - 1), new IPointGenerator() {
                 @Override
                 public Point next(Point point) {
                     return new Point(point.getX() + 1, point.getY() - 1);
                 }
             })) {
-                return field.getFigure(new Point(1, 1));
+                return field.getFigure(new Point(0, field.getSize() - 1));
             }
         } catch (InvalidPointException e) {
             e.printStackTrace();
@@ -56,7 +52,9 @@ public class WinnerController {
         return null;
     }
 
-    private boolean check(final Field field, final Point currentPoint, final IPointGenerator pointGenerator) {
+    boolean check(final Field field,
+                          final Point currentPoint,
+                          final IPointGenerator pointGenerator) {
 
         final Figure currentFigure;
         final Figure nextFigure;
@@ -64,12 +62,14 @@ public class WinnerController {
 
         try {
             currentFigure = field.getFigure(currentPoint);
+
+            if (currentFigure == null) return false;
+
             nextFigure = field.getFigure(nextPoint);
+
         } catch (InvalidPointException e) {
             return true;
         }
-
-        if (currentFigure == null) return false;
 
         if (currentFigure != nextFigure) return false;
 
