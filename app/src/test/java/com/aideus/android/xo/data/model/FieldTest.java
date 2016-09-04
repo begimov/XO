@@ -1,6 +1,6 @@
-package com.aideus.android.xo.model;
+package com.aideus.android.xo.data.model;
 
-import com.aideus.android.xo.model.exceptions.InvalidPointException;
+import com.aideus.android.xo.exceptions.InvalidPointException;
 
 import org.junit.Test;
 

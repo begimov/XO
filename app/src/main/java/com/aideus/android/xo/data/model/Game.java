@@ -1,4 +1,4 @@
-package com.aideus.android.xo.model;
+package com.aideus.android.xo.data.model;
 
 public class Game {
 

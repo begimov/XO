@@ -1,11 +1,11 @@
 package com.aideus.android.xo.controllers;
 
-import com.aideus.android.xo.model.Field;
-import com.aideus.android.xo.model.Figure;
-import com.aideus.android.xo.model.Game;
-import com.aideus.android.xo.model.Point;
-import com.aideus.android.xo.model.exceptions.AlreadyOccupiedException;
-import com.aideus.android.xo.model.exceptions.InvalidPointException;
+import com.aideus.android.xo.data.model.Field;
+import com.aideus.android.xo.data.model.Figure;
+import com.aideus.android.xo.data.model.Game;
+import com.aideus.android.xo.data.model.Point;
+import com.aideus.android.xo.exceptions.AlreadyOccupiedException;
+import com.aideus.android.xo.exceptions.InvalidPointException;
 
 public class GameController {
 

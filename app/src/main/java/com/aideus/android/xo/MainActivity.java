@@ -3,35 +3,68 @@ package com.aideus.android.xo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.aideus.android.xo.controllers.GameController;
-import com.aideus.android.xo.model.Field;
-import com.aideus.android.xo.model.Figure;
-import com.aideus.android.xo.model.Game;
-import com.aideus.android.xo.model.Player;
+import com.aideus.android.xo.view.fragments.GameScreenFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GameScreenFragment.OnFragmentInteractionListener {
+
+    private GameScreenFragment gameScreenFragment;
+
+    private GameManager gameManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        initGame();
+
+        //TODO Display GameSettingsFragment
+        //Get game properties from user in GameSettingsFragment
+        //Send game properties to GameManager
+
+        gameManager = new GameManager();
+        gameManager.initGame();
+
+        //Display GameScreenFragment
+
+        gameScreenFragment = GameScreenFragment.newInstance();
+
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container, gameScreenFragment)
+                .commit();
+
     }
 
-    private void initGame() {
+    @Override
+    protected void onResume() {
 
-        final String name1 = "Name1";
-        final String name2 = "Name2";
+        super.onResume();
 
-        final Player[] players = new Player[2];
-        players[0] = new Player(name1, Figure.X);
-        players[1] = new Player(name2, Figure.O);
+        //Get field state in prepared format from GameManager and display it
 
-        final Game game = new Game(players, new Field(3), "GameName");
+        gameScreenFragment.showField(gameManager.getField(), gameManager.getFieldSize());
 
-        final GameController gameController = new GameController(game);
+        //TODO Load game progress using GameManager->DataManager
 
+    }
 
+    @Override
+    protected void onPause() {
+        //TODO Save game progress using GameManager->DataManager
+        super.onPause();
+    }
 
+    //Assign callback onClick listener methods to get clicked position from GameScreenFragment
+
+    @Override
+    public void onGameScreenFragmentInteraction(int x, int y) {
+
+        //For every received click coordinate send it to GameManager
+
+        //Get confirmation that move applied, and display it (get Player which move is it and which figure to display), or get move rejection and react to it (everything from GameManager)
+
+        //Get confirmation for winner if there is one from GameManager and react to it
+
+        //Get confirmation for draw if there is one from GameManager and react to it
     }
 }

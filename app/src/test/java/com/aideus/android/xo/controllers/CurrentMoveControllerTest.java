@@ -1,8 +1,8 @@
 package com.aideus.android.xo.controllers;
 
-import com.aideus.android.xo.model.Field;
-import com.aideus.android.xo.model.Figure;
-import com.aideus.android.xo.model.Point;
+import com.aideus.android.xo.data.model.Field;
+import com.aideus.android.xo.data.model.Figure;
+import com.aideus.android.xo.data.model.Point;
 
 import org.junit.Test;
 
