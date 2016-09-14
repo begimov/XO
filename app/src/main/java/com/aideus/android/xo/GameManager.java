@@ -29,27 +29,8 @@ class GameManager {
 
     }
 
-    //TODO REFACTOR!!!!
-    String[] getField() {
-        int fieldSize = game.getField().getSize();
-        String[] fieldString = new String[fieldSize * fieldSize];
-        int counter = 0;
-        for (int y = 0; y < fieldSize; y++) {
-            for (int x = 0; x < fieldSize; x++) {
-                try {
-                    String figure = String.valueOf(game.getField().getFigure(new Point(x, y)));
-                    fieldString[counter] = figure;
-                } catch (InvalidPointException e) {
-                    e.printStackTrace();
-                }
-                counter++;
-            }
-        }
-        return fieldString;
-    }
-
-    int getFieldSize() {
-        return game.getField().getSize();
+    Game getGame() {
+        return game;
     }
 
     //Methods to save and load game state from Db (using DataManager)

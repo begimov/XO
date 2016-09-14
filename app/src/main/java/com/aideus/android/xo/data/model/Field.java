@@ -34,6 +34,11 @@ public class Field {
         field[point.getX()][point.getY()] = figure;
     }
 
+    //TODO Temporary method for testing of showing board, use show figure by figure (getFigure) instead
+    public Figure[][] getField() {
+        return field;
+    }
+
     private boolean checkPoint(final Point point) {
         return checkCoordinate(point.getX(), field.length)
                 && checkCoordinate(point.getY(), field[point.getX()].length);

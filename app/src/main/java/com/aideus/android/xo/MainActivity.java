@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements GameScreenFragmen
 
         super.onResume();
 
-        //Get field state in prepared format from GameManager and display it
+        //Get Game from GameManager and display it
 
-        gameScreenFragment.showField(gameManager.getField(), gameManager.getFieldSize());
+        gameScreenFragment.showField(gameManager.getGame());
 
         //TODO Load game progress using GameManager->DataManager
 

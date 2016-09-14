@@ -1,6 +1,10 @@
 package com.aideus.android.xo.data.model;
 
-public class Game {
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game implements Iterable<Player> {
 
     private final Player[] players;
 
@@ -28,4 +32,9 @@ public class Game {
         return name;
     }
 
+    @Override
+    public Iterator<Player> iterator() {
+        final List<Player> playersList = Arrays.asList(players);
+        return playersList.iterator();
+    }
 }

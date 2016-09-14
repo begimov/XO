@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.aideus.android.xo.R;
+import com.aideus.android.xo.data.model.Field;
+import com.aideus.android.xo.data.model.Game;
+import com.aideus.android.xo.data.model.Player;
 
 import java.util.Arrays;
 
@@ -72,22 +75,29 @@ public class GameScreenFragment extends Fragment {
         mListener = null;
     }
 
-    public void showField(final String[] mFieldString, final int fieldSize) {
+    public void showField(final Game game) {
         //Get screen size in pixels
 
         //Show board with fieldSize * fieldSize number of cells
-        showBoard(fieldSize);
+        showBoard(game);
 
         //Populate board with figures
-        showFigures(mFieldString, fieldSize);
+        showFigures(game.getField());
     }
 
-    private void showBoard(final int boardSize) {
+    private void showBoard(final Game game) {
+        final int boardSize = game.getField().getSize();
         textView.setText(String.valueOf(boardSize * boardSize));
+
+        for (Player player : game) {
+            textView.append(player.getName());
+            textView.append(player.getFigure().toString());
+        }
+
     }
 
-    private void showFigures(final String[] mFieldString, final int fieldSize) {
-        textView.setText(Arrays.toString(mFieldString));
+    private void showFigures(final Field field) {
+        textView.append(Arrays.deepToString(field.getField()));
     }
 
     public interface OnFragmentInteractionListener {
