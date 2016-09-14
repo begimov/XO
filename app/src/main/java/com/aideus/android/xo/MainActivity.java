@@ -61,10 +61,13 @@ public class MainActivity extends AppCompatActivity implements GameScreenFragmen
 
         //For every received click coordinate send it to GameManager
 
-        //Get confirmation that move applied, and display it (get Player which move is it and which figure to display), or get move rejection and react to it (everything from GameManager)
+        //Get confirmation that move applied, and tell GameScreenFragment to display it
+        // (get Player which move is it and which figure to display), or get move rejection and tell GameScreenFragment to react (everything from GameManager)
 
-        //Get confirmation for winner if there is one from GameManager and react to it
+        //Get confirmation for winner if there is one from GameManager and tell GameScreenFragment to react to it
+        // After that get callback and restart game by showing GameSettingsFragment
 
-        //Get confirmation for draw if there is one from GameManager and react to it
+        //Get confirmation for draw if there is one from GameManager and tell GameScreenFragment to react to it
+        // After that get callback and restart game by showing GameSettingsFragment
     }
 }
